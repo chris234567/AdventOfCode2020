@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chris\\source\\Prog12020\\AdventOfCode2020_1\\AdventOfCode2020.csproj",
+      "projectUniqueName": "C:\\Users\\Chris\\source\\AdventOfCode2020\\AdventOfCode2020_1\\AdventOfCode2020.csproj",
       "projectName": "AdventOfCode2020",
-      "projectPath": "C:\\Users\\Chris\\source\\Prog12020\\AdventOfCode2020_1\\AdventOfCode2020.csproj",
+      "projectPath": "C:\\Users\\Chris\\source\\AdventOfCode2020\\AdventOfCode2020_1\\AdventOfCode2020.csproj",
       "packagesPath": "C:\\Users\\Chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chris\\source\\Prog12020\\AdventOfCode2020_1\\obj\\",
+      "outputPath": "C:\\Users\\Chris\\source\\AdventOfCode2020\\AdventOfCode2020_1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
