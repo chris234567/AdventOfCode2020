@@ -15,8 +15,6 @@ namespace AdventOfCode2020_2
                 int lo = 0, hi = 0;
                 char ltr = ' ';
                 string pwd = "";
-                bool valid = false;
-
                 int counter = 0;
 
                 string[] subs = pwds[i].Split(' ');
@@ -37,11 +35,9 @@ namespace AdventOfCode2020_2
                     counter++;
                 }
 
-                var pwdChars = pwd.ToCharArray();
-
                 // part one
 
-                //foreach (var lmnt in pwdChars)
+                //foreach (var lmnt in pwd)
                 //    if (lmnt == ltr)
                 //    {
                 //        lo--;
@@ -53,14 +49,7 @@ namespace AdventOfCode2020_2
 
                 // part two
 
-                if (pwdChars[lo - 1] == ltr && pwdChars[hi - 1] == ltr)
-                    continue;
-                else if (pwdChars[lo - 1] == ltr)
-                    valid = true;
-                else if (pwdChars[hi - 1] == ltr)
-                    valid = true;
-
-                if (valid)
+                if (pwd[lo - 1] == ltr ^ pwd[hi - 1] == ltr)
                     valids++;
             }
             Console.WriteLine($"The number of valid passwords is: {valids}");
