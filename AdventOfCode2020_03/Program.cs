@@ -35,9 +35,7 @@ namespace AdventOfCode2020_03
 
             for (; y < forestList.Count; y += deltaY)
             {
-                x += deltaX;
-                if (x >= forestList[y].Length)
-                    x = x - (forestList[y].Length);
+                x = (x + deltaX) % forestList[x].Length;
                 if (forestList[y][x] == '#')
                     trees++;
             }
