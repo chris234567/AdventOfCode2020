@@ -17,14 +17,14 @@ namespace AdventOfCode2020_04
             {
                 // Part 1
 
-                var starts = new string[] { "iyr", "byr", "eyr", "hgt", "hcl", "ecl", "pid" };
-                int t = 0;
-                foreach (var start in starts)
-                {
-                    if (myArray[i].Contains(start))
-                        passport[t] = true;
-                    t++;
-                }
+                //var starts = new string[] { "iyr", "byr", "eyr", "hgt", "hcl", "ecl", "pid" };
+                //int t = 0;
+                //foreach (var start in starts)
+                //{
+                //    if (myArray[i].Contains(start))
+                //        passport[t] = true;
+                //    t++;
+                //}
 
                 // Part 2
 
@@ -93,12 +93,7 @@ namespace AdventOfCode2020_04
 
         static bool CheckInterval(string[] myArray2, int h, char a, char b, char c, char d, int min, int max, bool j = true)
         {
-            string s = "";
-            s += a;
-            s += b;
-            s += c;
-
-            if (myArray2[h].StartsWith(s))
+            if (myArray2[h].StartsWith(a.ToString() + b.ToString() + c.ToString()))
             {
                 if (j)
                     return (Convert.ToInt32(myArray2[h].TrimStart(a, b, c, d).ToString()) >= min &&
