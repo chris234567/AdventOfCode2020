@@ -39,6 +39,7 @@ namespace AdventOfCode2020_03
                 if (forestList[y][x] == '#')
                     trees++;
             }
+
             return trees;
         }
     }
