@@ -11,14 +11,15 @@ namespace AdventOfCode2020_06
         {
             string path = @"C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_06\day06_input.txt";
             var groups = File.ReadAllLines(path);
-
-            Dictionary<char, int> characters = new Dictionary<char, int>(); ;
             int count = 0;
             int lines = 0;
+            Dictionary<char, int> characters = new Dictionary<char, int>(); ;
 
             for (int i = 0; i < groups.Length; i++)
             {
-                lines++;
+                if (!(groups[i] == ""))
+                    lines++;
+
                 var curr = groups[i].ToCharArray();
 
                 for (int l = 0; l < curr.Length; l++)
@@ -28,9 +29,6 @@ namespace AdventOfCode2020_06
                 if (groups[i] == "" || i == groups.Length - 1) // next group
                 {
                     int counter = 0;
-
-                    if (i != groups.Length - 1) // because line counter does weird stuff 
-                        lines--;
 
                     for (char k = (char)97; k < 123; k++)
                         if (characters.ContainsKey(k))
