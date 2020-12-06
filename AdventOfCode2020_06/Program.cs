@@ -18,37 +18,31 @@ namespace AdventOfCode2020_06
 
             for (int i = 0; i < groups.Length; i++)
             {
+                lines++;
                 var curr = groups[i].ToCharArray();
 
                 for (int l = 0; l < curr.Length; l++)
-                {
                     if(!characters.TryAdd(curr[l], 1))
-                    {
                         characters[curr[l]]++;
-                    }
-                }
 
                 if (groups[i] == "" || i == groups.Length - 1) // next group
                 {
                     int counter = 0;
 
-                    if (i != 5 && i != groups.Length - 1) // because line counter does weird stuff 
+                    if (i != groups.Length - 1) // because line counter does weird stuff 
                         lines--;
 
                     for (char k = (char)97; k < 123; k++)
-                    {
                         if (characters.ContainsKey(k))
                             //if (characters[k] == lines) // <-- Part 2
                                 counter++;
-                    }
                     
                     count += counter;
                     characters.Clear(); // reset
                     lines = 0;
                 }
-                lines++;
             }
-            Console.WriteLine(count);
+            Console.WriteLine("Count: " + count);
         }
     }
 }
