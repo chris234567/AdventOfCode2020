@@ -10,37 +10,42 @@ namespace AdventOfCode2020_06
         static void Main(string[] args)
         {
             string path = @"C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_06\day06_input.txt";
-            var groups = File.ReadAllLines(path);
-            int count = 0;
-            int lines = 0;
-            Dictionary<char, int> characters = new Dictionary<char, int>(); ;
-
-            for (int i = 0; i < groups.Length; i++)
+            var input = File.ReadAllText(path);
+            input.Split("y");
+            foreach (var element in input)
             {
-                if (!(groups[i] == ""))
-                    lines++;
-
-                var curr = groups[i].ToCharArray();
-
-                for (int l = 0; l < curr.Length; l++)
-                    if(!characters.TryAdd(curr[l], 1))
-                        characters[curr[l]]++;
-
-                if (groups[i] == "" || i == groups.Length - 1) // next group
-                {
-                    int counter = 0;
-
-                    for (char k = (char)97; k < 123; k++)
-                        if (characters.ContainsKey(k))
-                            //if (characters[k] == lines) // <-- Part 2
-                                counter++;
-                    
-                    count += counter;
-                    characters.Clear(); // reset
-                    lines = 0;
-                }
+                Console.WriteLine(element);
             }
-            Console.WriteLine("Count: " + count);
+            //int count = 0;
+            //int lines = 0;
+            //Dictionary<char, int> characters = new Dictionary<char, int>(); ;
+
+            //for (int i = 0; i < groups.Length; i++)
+            //{
+            //    if (!(groups[i] == ""))
+            //        lines++;
+
+            //    var curr = groups[i].ToCharArray();
+
+            //    for (int l = 0; l < curr.Length; l++)
+            //        if(!characters.TryAdd(curr[l], 1))
+            //            characters[curr[l]]++;
+
+            //    if (groups[i] == "" || i == groups.Length - 1) // next group
+            //    {
+            //        int counter = 0;
+
+            //        for (char k = (char)97; k < 123; k++)
+            //            if (characters.ContainsKey(k))
+            //                //if (characters[k] == lines) // <-- Part 2
+            //                    counter++;
+                    
+            //        count += counter;
+            //        characters.Clear(); // reset
+            //        lines = 0;
+            //    }
+            //}
+            //Console.WriteLine("Count: " + count);
         }
     }
 }
