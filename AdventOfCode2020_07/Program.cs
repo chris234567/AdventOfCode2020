@@ -28,12 +28,7 @@ namespace AdventOfCode2020_07
 
             // PART 2
 
-            int individualBags = 1;
-
-            Part2("shiny gold", input, ref individualBags, ref validColors);
-
-            Console.WriteLine(individualBags);
-
+            Console.WriteLine(Part2("shiny gold", input, ref validColors) - 1); // minus 1 `cause the shiny goden bag doesnt count
         }
 
         static void Part1(string element, string color, ref List<string> validColors)
@@ -49,8 +44,10 @@ namespace AdventOfCode2020_07
             }
         }
 
-        static void Part2(string color, string[] input, ref int individualBags, ref List<string> validColors)
+        static int Part2(string color, string[] input, ref List<string> validColors)
         {
+            int individualBags = 1;
+
             foreach (var element in input)
             {
                 string[] r = element.Split(" ");
@@ -58,29 +55,25 @@ namespace AdventOfCode2020_07
                 if (r[0] + $" {r[1]}" == color)
                 {
                     if (r.Length <= 7 || validColors.Contains(color)) // "contains no other bags"
-                        return;
+                        return 1;
 
                     for (int b = 4; ; b += 4) // 20 = max elements per line
                     {
                         try
                         {
                             int counter = Int32.Parse(r[b]);
-                            validColors.Add(color);
-
-                            individualBags += counter;
-
-                            for (int i = 0; i < counter; i++)
-                            {
-                                Part2(r[b + 1] + $" {r[b + 2]}", input, ref individualBags, ref validColors);
-                            }
+                            Console.WriteLine(r[b]);
+                            Console.WriteLine(r[b + 1] + $" {r[b + 2]}");
+                            individualBags = individualBags + (counter * Part2(r[b + 1] + $" {r[b + 2]}", input, ref validColors));
                         }
                         catch (IndexOutOfRangeException)
                         {
-                            return;
+                            return individualBags;
                         }
                     }
                 }
-            } // 4, 416, 535, 123 false
+            }
+            return individualBags;
         }
     }
 }
