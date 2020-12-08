@@ -15,20 +15,21 @@ namespace AdventOfCode2020_07
 
             // PART 1
 
-            //validColors.Add("shiny gold");
+            validColors.Add("shiny gold");
 
-            //for (int p = 0; p < validColors.Count; p++) // foreach (var color in validColors)
-            //{
-            //    foreach (var element in input)
-            //    {
-            //        Part1(element, validColors[p], ref validColors);
-            //    }
-            //}
-            //Console.WriteLine(validColors.Distinct().Count() - 1); // minus 1 `cause the shiny golden bag cannot contain itself
+            for (int p = 0; p < validColors.Count; p++) // foreach (var color in validColors)
+            {
+                foreach (var element in input)
+                {
+                    Part1(element, validColors[p], ref validColors);
+                }
+            }
+            
+            Console.WriteLine(" \nPart 1 : " + (validColors.Distinct().Count() - 1)); // minus 1 `cause the shiny golden bag cannot contain itself
 
             // PART 2
 
-            Console.WriteLine(Part2("shiny gold", input, ref validColors) - 1); // minus 1 `cause the shiny goden bag doesnt count
+            Console.WriteLine(" \nPart 2 : " + (Part2("shiny gold", input) - 1)); // minus 1 `cause the shiny goden bag doesnt count
         }
 
         static void Part1(string element, string color, ref List<string> validColors)
@@ -44,7 +45,7 @@ namespace AdventOfCode2020_07
             }
         }
 
-        static int Part2(string color, string[] input, ref List<string> validColors)
+        static int Part2(string color, string[] input)
         {
             int individualBags = 1;
 
@@ -54,22 +55,18 @@ namespace AdventOfCode2020_07
 
                 if (r[0] + $" {r[1]}" == color)
                 {
-                    if (r.Length <= 7 || validColors.Contains(color)) // "contains no other bags"
+                    if (r.Length <= 7) // "contains no other bags"
                         return 1;
 
                     for (int b = 4; ; b += 4) // 20 = max elements per line
                     {
-                        try
+                        if (b < r.Length)
                         {
                             int counter = Int32.Parse(r[b]);
-                            Console.WriteLine(r[b]);
-                            Console.WriteLine(r[b + 1] + $" {r[b + 2]}");
-                            individualBags = individualBags + (counter * Part2(r[b + 1] + $" {r[b + 2]}", input, ref validColors));
+                            individualBags = individualBags + (counter * Part2(r[b + 1] + $" {r[b + 2]}", input));
                         }
-                        catch (IndexOutOfRangeException)
-                        {
+                        else 
                             return individualBags;
-                        }
                     }
                 }
             }
