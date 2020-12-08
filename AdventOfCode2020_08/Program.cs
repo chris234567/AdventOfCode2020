@@ -15,7 +15,7 @@ namespace AdentOfCode2020_08
 
             for (int i = 0; i < 1000; i++)
             {
-                Recursion(i);
+                Part2(i);
             }
         }
         static void Part1()
@@ -55,7 +55,7 @@ namespace AdentOfCode2020_08
             Console.WriteLine("\n Part1 : " + acc);
         }
 
-        static bool Recursion(int start)
+        static bool Part2(int start)
         {
             var path = @"C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_08\input_day08.txt";
             var instructions = File.ReadAllLines(path);

@@ -21,7 +21,7 @@ namespace AdventOfCode2020_07
             //{
             //    foreach (var element in input)
             //    {
-            //        Recursion(element, validColors[p], ref validColors);
+            //        Part1(element, validColors[p], ref validColors);
             //    }
             //}
             //Console.WriteLine(validColors.Distinct().Count() - 1); // minus 1 `cause the shiny golden bag cannot contain itself
@@ -30,13 +30,13 @@ namespace AdventOfCode2020_07
 
             int individualBags = 1;
 
-            Recursion2("shiny gold", input, ref individualBags, ref validColors);
+            Part2("shiny gold", input, ref individualBags, ref validColors);
 
             Console.WriteLine(individualBags);
 
         }
 
-        static void Recursion(string element, string color, ref List<string> validColors)
+        static void Part1(string element, string color, ref List<string> validColors)
         {
             if (element.Contains(color))
             {
@@ -49,7 +49,7 @@ namespace AdventOfCode2020_07
             }
         }
 
-        static void Recursion2(string color, string[] input, ref int individualBags, ref List<string> validColors)
+        static void Part2(string color, string[] input, ref int individualBags, ref List<string> validColors)
         {
             foreach (var element in input)
             {
@@ -71,7 +71,7 @@ namespace AdventOfCode2020_07
 
                             for (int i = 0; i < counter; i++)
                             {
-                                Recursion2(r[b + 1] + $" {r[b + 2]}", input, ref individualBags, ref validColors);
+                                Part2(r[b + 1] + $" {r[b + 2]}", input, ref individualBags, ref validColors);
                             }
                         }
                         catch (IndexOutOfRangeException)
