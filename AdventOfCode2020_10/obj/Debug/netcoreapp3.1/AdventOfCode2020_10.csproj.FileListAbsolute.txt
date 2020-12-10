@@ -1,0 +1,13 @@
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.exe
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.deps.json
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.runtimeconfig.json
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.runtimeconfig.dev.json
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.dll
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\bin\Debug\netcoreapp3.1\AdventOfCode2020_10.pdb
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.csprojAssemblyReference.cache
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.AssemblyInfoInputs.cache
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.AssemblyInfo.cs
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.csproj.CoreCompileInputs.cache
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.dll
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.pdb
+C:\Users\Chris\source\AdventOfCode2020\AdventOfCode2020_10\obj\Debug\netcoreapp3.1\AdventOfCode2020_10.genruntimeconfig.cache
