@@ -120,11 +120,6 @@ namespace AdventOfCode2020_12
                     currDegree = Int32.Parse(instruction.Trim('R', 'L')) % 360;
                     int value = 0; // positions to be shifted
 
-                    foreach (var item in waypoint)
-                    {
-                        Console.WriteLine(item);
-                    }
-
                     switch (currDegree)
                     {
                         case 90:
@@ -193,12 +188,6 @@ namespace AdventOfCode2020_12
 
                         waypoint = temp;
                     }
-                    Console.WriteLine();
-                    foreach (var item in waypoint)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    Console.WriteLine();
                 }
                 else // moving
                 {
