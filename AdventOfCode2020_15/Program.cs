@@ -1,10 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-
-    // comment: i dont know how to optimize it any further... 
-    // im suspecting the temporary dictionary isn't very performant,
-    // but i dont know of any method to search a certain interval ( alle elements except the last ) of a dictionary with wich the temp array of course would become obsolete.
+using System.Linq;
 
 namespace AdventOfCode2020_15
 {
@@ -31,38 +28,18 @@ namespace AdventOfCode2020_15
             var spokenNums = new Dictionary<int, int>();
 
             for (int i = 0; i < input.Length; i++)
-            {
+
                 spokenNums.Add(i, Convert.ToInt32(input[i]));
-            }
 
-            int position = spokenNums.Count;
-
-            while (position != num)
+            for (int position = spokenNums.Count; position < num; position++)
             {
                 int previousNumber = spokenNums[position - 1];
-                var temp = new Dictionary<int, int>();
 
-                for (int i = 0; i < spokenNums.Count - 1; i++)
-                {
-                    temp.Add(i, spokenNums[i]); // all spoken nums except the previous one
-                }
+                if (spokenNums.Values.ToList().IndexOf(previousNumber) != spokenNums.Count - 1) // like .Contains(previousNumber) except it ignores last index
 
-                if (!temp.ContainsValue(previousNumber))
-                {
-                    spokenNums.Add(position, 0);
-                }
+                    spokenNums.Add(position, (position - 1) - spokenNums.Values.ToList().LastIndexOf(previousNumber, spokenNums.Count - 2));
                 else
-                {
-                    int maxIndex = 0;
-
-                    for (int i = 0; i < temp.Count; i++)
-                        if (temp[i] == previousNumber)
-                            maxIndex = i;
-
-                    spokenNums.Add(position, (position - 1) - maxIndex);
-                }
-
-                position++;
+                    spokenNums.Add(position, 0);
             }
             
             Console.WriteLine("The 2020th number of spoken numbers is : " + spokenNums[num - 1]);
