@@ -58,39 +58,41 @@ namespace AdventOfCode2020_13
                     busIDS.Add(Int32.Parse(bus));
                     remainders.Add(counter);
                 }
-
-                //else
-                //{
-                //    busIDS.Add(0); // needed for iteration
-                //}
+                else
+                {
+                    busIDS.Add(0); // needed for iteration
+                }
 
                 counter++;
             }
 
-            Console.WriteLine(findMinX(busIDS, remainders, busIDS.Count));
-
             // iterative solution approach 1
 
-            //while (true) 
-            //{
-            //    int counter = 0;
+            long earliestTimestamp = 100000000000000;
 
-            //    foreach (var ID in busIDS)
-            //    {
-            //        if (ID == 0)
-            //            counter++;
+            while (true)
+            {
+                int counter1 = 0;
 
-            //        else if ((earliestTimestamp + counter) % ID == 0)
-            //            counter++;
-            //    }
+                foreach (var ID in busIDS)
+                {
+                    if (ID == 0)
+                        counter1++;
 
-            //    if (counter == busIDS.Count)
-            //        break;
+                    else if ((earliestTimestamp + counter1) % ID == 0)
+                        counter1++;
+                }
 
-            //    earliestTimestamp += busIDS[0];
-            //}
+                if (counter1 == busIDS.Count)
+                    break;
+
+                earliestTimestamp += busIDS[0];
+
+            }
 
             // iterative solution approach 2
+
+            //Console.WriteLine(findMinX(busIDS, remainders, busIDS.Count));
 
             static long findMinX(List<int> num, List<int> rem, int k)
             {
@@ -107,7 +109,8 @@ namespace AdventOfCode2020_13
                     if (j == k)
                         return x;
 
-                    x++;
+                    x += 41;
+
                 }
             }
         }
