@@ -42,7 +42,7 @@ namespace AdventOfCode2020_15
                     spokenNums.Add(position, 0);
             }
             
-            Console.WriteLine("The 2020th number of spoken numbers is : " + spokenNums[num - 1]);
+            Console.WriteLine($"The {num}th number of spoken numbers is : " + spokenNums[num - 1]);
         }
     } 
 }
